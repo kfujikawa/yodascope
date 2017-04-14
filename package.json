@@ -37,7 +37,9 @@
     "watch:assets": "run-s build:assets _watch:assets",
     "_watch:assets": "chokidar assets/**/* -c \"npm run build:assets\"",
     "deploy": "gh-pages-deploy",
-    "clean-source": "rimraf README.md src webroot package.json"
+    "clean-source": "rimraf README.md src webroot package.json",
+    "heroku-prebuild": "npm install nodemon",
+    "start": "nodemon server.js"
   },
   "author": "Joe Turner <joe@oampo.co.uk>",
   "license": "UNLICENSED",

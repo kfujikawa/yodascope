@@ -4,7 +4,7 @@
   "description": "A React template",
   "main": "js/index.js",
   "scripts": {
-    "start": "http-server -c-1 build",
+    "start": "nodemon server.js",
     "dev": "run-p watch serve",
     "test": "mocha --recursive --compilers js:babel-core/register",
     "build": "run-s build:*",
@@ -38,8 +38,7 @@
     "_watch:assets": "chokidar assets/**/* -c \"npm run build:assets\"",
     "deploy": "gh-pages-deploy",
     "clean-source": "rimraf README.md src webroot package.json",
-    "heroku-prebuild": "npm install nodemon",
-    "start": "nodemon server.js"
+    "heroku-prebuild": "npm install nodemon"
   },
   "author": "Joe Turner <joe@oampo.co.uk>",
   "license": "UNLICENSED",
@@ -66,6 +65,7 @@
     "webpack": "^1.13.1"
   },
   "dependencies": {
+    "body-parser": "^1.17.1",
     "isomorphic-fetch": "^2.2.1",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",

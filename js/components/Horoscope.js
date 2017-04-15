@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import getSign from '../actions/index';
-import changeSign from '../actions/index';
+// import addSign from '../actions/index';
+import fetchHoroscope from '../actions/index';
 
 export class Horoscope extends React.Component {
   constructor(props) {
@@ -13,6 +13,7 @@ export class Horoscope extends React.Component {
 
   handleChange(event) {
     this.setState({value: event.target.value});
+    this.props.dispatch(fetchHoroscope(this.state.value));
   }
 
     render(){

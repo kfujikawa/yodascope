@@ -4,14 +4,23 @@ const initialRepositoryState = [];
 
 export const horoscopeReducer = (state = {initialRepositoryState}, action) => {
   switch (action.type) {
-    case actions.GET_SIGN:
-      return Object.assign({}, state, {
-        sign: [...state.sign]
-      });
-    case actions.CHANGE_SIGN:
-    	return Object.assign({}, state, {
-    		sign: [...state.sign, action.sign]
-    	});
+  	// case ADD_SIGN:
+  	// 	return [...state, {
+  	// 		sign: action.sign,
+  	// 		horoscope: null
+  	// 	}];
+
+  //   case actions.FETCH_HOROSCOPE_SUCCESS:
+		// const index = state.findIndex(repository =>
+	 //        repository.name === action.repository
+	 //    );
+
+	 //    const before = state.slice(0, index);
+	 //    const after = state.slice(index + 1):
+	 //    const newHoroscope = Object.assign({}, state[index], {
+	 //    	horoscope: action.horoscope
+	 //    });
+	 //    return [...before, newHoroscope, ...after];
 
     default:
       return state;

@@ -17,6 +17,16 @@ import Horoscope from './components/Horoscope';
 
 // ReactDOM.render(routes, document.getElementById('app'));
 
+// class App extends React.Component{
+// 	dispatch({type: "GET_SIGN"});
+// }
+
+// const reducer = (state={}, action) => {
+// 	if(action.type === "GET_SIGN"){
+		
+// 	}
+// }
+
 ReactDOM.render(<Provider store={store}><Horoscope /></Provider>,
   document.getElementById('app')
 );

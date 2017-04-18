@@ -25,7 +25,7 @@ export class Horoscope extends React.Component {
     return (
       <div>
         <select
-          className="navbar-custom navbar-toggle"
+          className="select"
           onChange={this.handleChange}
           value={this.state.value}>
           <option value="Aquarius">Aquarius</option>

@@ -17,13 +17,17 @@ export class Horoscope extends React.Component {
   render() {
     if (this.state.value) {
       this.props.dispatch(fetchHoroscope(this.state.value.toLowerCase()));
+
       // this.props.dispatch(yodaSpeak(this.state.horoscope));
     }
 
     let message = 'You selected ' + this.state.value;
     return (
       <div>
-        <select className="navbar-custom navbar-toggle " onChange={this.handleChange} value={this.state.value}>
+        <select
+          // className="navbar-custom navbar-toggle"
+          onChange={this.handleChange}
+          value={this.state.value}>
           <option value="Aquarius">Aquarius</option>
           <option value="Pisces">Pisces</option>
           <option value="Aries">Aries</option>

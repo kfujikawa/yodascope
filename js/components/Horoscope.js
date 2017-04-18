@@ -22,9 +22,8 @@ export class Horoscope extends React.Component {
 
     let message = 'You selected ' + this.state.value;
     return (
-      <div id="signContainer">
-        <h1>Yodascope</h1>
-        <select onChange={this.handleChange} value={this.state.value}>
+      <div>
+        <select className="navbar-custom navbar-toggle " onChange={this.handleChange} value={this.state.value}>
           <option value="Aquarius">Aquarius</option>
           <option value="Pisces">Pisces</option>
           <option value="Aries">Aries</option>

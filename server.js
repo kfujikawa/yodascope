@@ -9,6 +9,23 @@ const app = express();
 app.use(express.static('build'));
 app.use(bodyParser.json());
 
+app.post('/yodaspeak', function (req, res, next) {
+	let yoda = new YodaSpeak('2ZdLUzroC6mshVRTRBvJfsvCUzdYp16MK46jsnRHSID15Kx5W2');
+	console.log("yodaspeak running");
+	console.log("This is the original horoscope: " + req.body.horoscope);
+	yoda.convert(
+	  (req.body.horoscope),
+	  function(err, result) {
+	    if (!err) {
+	      console.log("This is the yodaconverted text: " + result.toString());
+	    } else {
+	      console.log(err);
+	    }
+	  }
+	);
+	next();
+})
+
 app.listen(PORT, function() {
   console.log('Example app listening on localhost:' + PORT);
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchHoroscope, yodaSpeak } from '../actions/index';
+import { fetchHoroscope, fetchYodascope } from '../actions/index';
 
 export class Horoscope extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ export class Horoscope extends React.Component {
     if (this.state.value) {
       this.props.dispatch(fetchHoroscope(this.state.value.toLowerCase()));
 
-      // this.props.dispatch(yodaSpeak(this.state.horoscope));
+      this.props.dispatch(fetchYodascope(this.props.horoscope));
     }
 
     let message = 'You selected ' + this.state.value;
@@ -40,6 +40,7 @@ export class Horoscope extends React.Component {
           <option value="Sagittarius">Sagittarius</option>
         </select>
         <p className="horoscope-text">{this.props.horoscope}</p>
+        <p>{this.props.yodascope}</p>
       </div>
     );
   }

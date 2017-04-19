@@ -1,11 +1,11 @@
 import * as actions from '../actions';
 
 export const horoscopeReducer = (state = [], action) => {
-  console.log('I come from a reducer');
+  console.log('I come from horoscopeReducer');
   switch (action.type) {
     case actions.FETCH_HOROSCOPE_SUCCESS:
       // you will attach horoscope to the store / state
-      console.log('FETCH SUCCESS');
+      console.log('FETCH_HOROSCOPE_SUCCESS');
       return Object.assign({}, state, { 
       	horoscope: action.horoscope      
       });
@@ -17,7 +17,7 @@ export const horoscopeReducer = (state = [], action) => {
 
     case actions.FETCH_YODA_SUCCESS:
       // you will attach horoscope to the store / state
-      console.log('FETCH YODA SUCCESS');
+      console.log('FETCH_YODA_SUCCESS');
       return Object.assign({}, state, { 
       	yodascope: action.yodascope      
       });
@@ -26,9 +26,6 @@ export const horoscopeReducer = (state = [], action) => {
       // you will attach an error
       throw new Error('Could not find yodascope');
       return state;
-
-    case actions.YODA_SPEAK:
-    // take state.horoscope and yoda.convert somehow with server.js
 
     default:
       return state;

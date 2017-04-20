@@ -21,7 +21,8 @@ export class Horoscope extends React.Component {
       this.props.dispatch(fetchYodascope(this.props.horoscope));
     }
 
-    let message = 'You selected ' + this.state.value;
+    let message = 'You selected ' + this.state.value + " ";
+
     return (
       <div>
         <select
@@ -39,7 +40,6 @@ export class Horoscope extends React.Component {
           <option value="Scorpio">Scorpio</option>
           <option value="Sagittarius">Sagittarius</option>
         </select>
-        <p className="horoscope-text">{this.props.horoscope}</p>
         <p>{this.props.yodascope}</p>
       </div>
     );

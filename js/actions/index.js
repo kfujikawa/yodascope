@@ -54,7 +54,7 @@ export const fetchHoroscope = sign => {
 export const fetchYodascope = horoscope => {
   console.log('I come from fetch yodascope');
   return dispatch => {
-    const url = `http://api.funtranslations.com/translate/yoda.json?api_key=y6C_2a3FVqfNmz_aHoCK9weF&text="${horoscope}"`;
+    const url = `http://api.funtranslations.com/translate/yoda.json?api_key=y6C_2a3FVqfNmz_aHoCK9weF&text=${horoscope}`;
     return fetch(url)
       .then(response => {
         if (!response.ok) {
@@ -62,10 +62,11 @@ export const fetchYodascope = horoscope => {
           error.response = response;
           throw error;
         }
-        return response.json();
+        return(response.json());
       })
       .then(data => {
-        return dispatch(fetchYodaSuccess(horoscope, data.yodascope));
+        // console.log(data.contents.translated);
+        return dispatch(fetchYodaSuccess(horoscope, data.contents.translated));
       })
       .catch(error => {
         return dispatch(fetchYodaError(horoscope, error));

@@ -30,7 +30,7 @@ export const fetchYodaError = (horoscope, error) => ({
 });
 
 export const fetchHoroscope = sign => {
-  console.log('I come from fetch horoscope');
+  // console.log('I come from fetch horoscope');
   return dispatch => {
     const url = `http://sandipbgt.com/theastrologer/api/horoscope/${sign}/today`;
     return fetch(url)
@@ -52,7 +52,7 @@ export const fetchHoroscope = sign => {
 };
 
 export const fetchYodascope = horoscope => {
-  console.log('I come from fetch yodascope');
+  // console.log('I come from fetch yodascope');
   return dispatch => {
     const url = `http://api.funtranslations.com/translate/yoda.json?api_key=y6C_2a3FVqfNmz_aHoCK9weF&text=${horoscope}`;
     return fetch(url)

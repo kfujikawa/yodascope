@@ -23801,7 +23801,7 @@
 	var fetchHoroscope = exports.fetchHoroscope = function fetchHoroscope(sign) {
 	  // console.log('I come from fetch horoscope');
 	  return function (dispatch) {
-	    var url = 'http://sandipbgt.com/theastrologer/api/horoscope/' + sign + '/today';
+	    var url = 'https://sandipbgt.com/theastrologer/api/horoscope/' + sign + '/today';
 	    return fetch(url).then(function (response) {
 	      if (!response.ok) {
 	        var error = new Error(response.statusText);
@@ -23820,7 +23820,7 @@
 	var fetchYodascope = exports.fetchYodascope = function fetchYodascope(horoscope) {
 	  // console.log('I come from fetch yodascope');
 	  return function (dispatch) {
-	    var url = 'http://api.funtranslations.com/translate/yoda.json?api_key=y6C_2a3FVqfNmz_aHoCK9weF&text=' + horoscope;
+	    var url = 'https://api.funtranslations.com/translate/yoda.json?api_key=y6C_2a3FVqfNmz_aHoCK9weF&text=' + horoscope;
 	    return fetch(url).then(function (response) {
 	      if (!response.ok) {
 	        var error = new Error(response.statusText);

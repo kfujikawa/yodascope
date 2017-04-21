@@ -23801,7 +23801,7 @@
 	var fetchHoroscope = exports.fetchHoroscope = function fetchHoroscope(sign) {
 	  // console.log('I come from fetch horoscope');
 	  return function (dispatch) {
-	    var url = 'https://sandipbgt.com/theastrologer/api/horoscope/' + sign + '/today';
+	    var url = 'http://sandipbgt.com/theastrologer/api/horoscope/' + sign + '/today';
 	    return fetch(url).then(function (response) {
 	      if (!response.ok) {
 	        var error = new Error(response.statusText);

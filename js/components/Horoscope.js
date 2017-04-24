@@ -16,9 +16,8 @@ export class Horoscope extends React.Component {
 
   render() {
     if (this.state.value) {
-      this.props.dispatch(fetchHoroscope(this.state.value.toLowerCase()));
 
-      this.props.dispatch(fetchYodascope(this.props.horoscope));
+      this.props.dispatch(fetchHoroscope(this.state.value.toLowerCase()));
     }
 
     let message = 'You selected ' + this.state.value + " ";
@@ -40,13 +39,13 @@ export class Horoscope extends React.Component {
           <option value="Scorpio">Scorpio</option>
           <option value="Sagittarius">Sagittarius</option>
         </select>
-        <p>{this.props.yodascope}</p>
+        <p>{this.props.horoscope}</p>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state, props) => {
+const mapStateToProps = (state) => {
   return state;
 };
 
